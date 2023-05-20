@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wscubeflutter/Pages/homepage.dart';
-import 'package:wscubeflutter/Pages/login.dart';
+import 'package:catalog/Pages/homepage.dart';
+import 'package:catalog/Pages/login.dart';
 
 void main() {
   runApp(MyApp());
