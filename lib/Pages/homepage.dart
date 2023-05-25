@@ -1,11 +1,14 @@
+import 'package:catalog/models/catalogs.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/ItemWidget.dart';
 import '../widgets/MyDrawer.dart';
 
 class Homepage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
+    final dumylist=List.generate(50, (index) => Products.items[0]);
     const double days=37;
 
     return Scaffold(
@@ -14,9 +17,15 @@ class Homepage extends StatelessWidget{
             title: const Text("Home") ,
           ),
           drawer: MyDrawer(),
-          body: const Center(
-            child: Text("this is not $days days of flutter i am gonna do it in a week"),
-          ),
+          body:ListView.builder(
+              itemCount:dumylist.length ,
+              itemBuilder:(context, index){
+                return ItemWidget(
+                  item: dumylist[index],
+
+                );
+
+              })
         );
 
 
