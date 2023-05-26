@@ -42,9 +42,9 @@ class _HomepageState extends State<Homepage> {
      Scaffold(
        body: SafeArea(
          child: Container(
-
-           padding: EdgeInsets.symmetric(vertical: 30 ),
+           padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
              child:Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                CatalogHeader(), if(CatalogModel.items!=null && CatalogModel.items.isNotEmpty)
                  CataLogList()
