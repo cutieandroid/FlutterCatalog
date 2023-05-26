@@ -4,6 +4,7 @@ import 'package:catalog/models/catalogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 import '../widgets/ItemWidget.dart';
 import '../widgets/MyDrawer.dart';
 
@@ -37,19 +38,61 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     //final dumylist=List.generate(50, (index) => CatalogModel.items[0]);
 
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Home"),
-        ),
-        drawer: MyDrawer(),
-        body: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatalogModel.items.length,
-                itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: CatalogModel.items[index],
-                  );
-                })
-            : const Center(child: CircularProgressIndicator()));
+    return (
+     Scaffold(
+       body: SafeArea(
+         child: Container(
+
+           padding: EdgeInsets.symmetric(vertical: 30 ),
+             child:Column(
+             children: [
+               CatalogHeader(), if(CatalogModel.items!=null && CatalogModel.items.isNotEmpty)
+                 CataLogList()
+               else
+                 const Center
+                   (child: CircularProgressIndicator()
+                 )
+             ],
+
+
+           )
+
+         ),
+       ),
+
+     )
+    );
   }
+}
+
+class CataLogList extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return(
+    Container()
+    );
+  }
+}
+class CatalogHeader extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text("Catalog App",
+                textScaleFactor: 3,
+                style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
+            Text("Trending products",textScaleFactor: 1.2)
+
+
+
+          ],
+        )
+
+    );
+
+
+  }
+
 }
