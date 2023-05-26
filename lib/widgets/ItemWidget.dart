@@ -17,6 +17,7 @@ class ItemWidget extends StatelessWidget{
       shape: const StadiumBorder(),
 
       child: ListTile(
+
         onTap: (){
           ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

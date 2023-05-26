@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:catalog/models/catalogs.dart';
+import 'package:catalog/widgets/MyThemes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -40,6 +41,7 @@ class _HomepageState extends State<Homepage> {
 
     return (
      Scaffold(
+       backgroundColor: MyTheme.creamcolor,
        body: SafeArea(
          child: Container(
            padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
@@ -47,7 +49,8 @@ class _HomepageState extends State<Homepage> {
                crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                CatalogHeader(), if(CatalogModel.items!=null && CatalogModel.items.isNotEmpty)
-                 CataLogList()
+                 Expanded(child: CataLogList()) //we need to expand when we need to display list in column
+
                else
                  const Center
                    (child: CircularProgressIndicator()
@@ -69,7 +72,15 @@ class CataLogList extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return(
-    Container()
+    ListView.builder(
+      shrinkWrap: true,
+      itemCount: CatalogModel.items.length,
+        itemBuilder: (context,index){
+        final catalog= CatalogModel.items[index];
+        return ItemWidget(item: catalog);
+
+
+        })
     );
   }
 }
@@ -84,8 +95,6 @@ class CatalogHeader extends StatelessWidget{
                 textScaleFactor: 3,
                 style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
             Text("Trending products",textScaleFactor: 1.2)
-
-
 
           ],
         )
