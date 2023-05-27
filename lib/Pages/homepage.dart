@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 
-import '../widgets/ItemWidget.dart';
-import '../widgets/MyDrawer.dart';
+import '../widgets/HomePageWidgets/catalogheader.dart';
+import '../widgets/HomePageWidgets/cataloglist.dart';
+import '../widgets/HomePageWidgets/ItemWidget.dart';
+import '../widgets/HomePageWidgets/MyDrawer.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -52,12 +54,13 @@ class _HomepageState extends State<Homepage> {
                  Expanded(child: CataLogList()) //we need to expand when we need to display list in column
 
                else
-                 const Center
-                   (child: CircularProgressIndicator()
+                 const Expanded(
+                   child:  Center
+                     (child: CircularProgressIndicator()
+                   ),
                  )
              ],
-
-
+               
            )
 
          ),
@@ -68,40 +71,5 @@ class _HomepageState extends State<Homepage> {
   }
 }
 
-class CataLogList extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return(
-    ListView.builder(
-      shrinkWrap: true,
-      itemCount: CatalogModel.items.length,
-        itemBuilder: (context,index){
-        final catalog= CatalogModel.items[index];
-        return ItemWidget(item: catalog);
 
 
-        })
-    );
-  }
-}
-class CatalogHeader extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return(
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text("Catalog App",
-                textScaleFactor: 3,
-                style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
-            Text("Trending products",textScaleFactor: 1.2)
-
-          ],
-        )
-
-    );
-
-
-  }
-
-}

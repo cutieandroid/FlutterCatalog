@@ -2,7 +2,7 @@
 import 'package:catalog/widgets/MyThemes.dart';
 import 'package:flutter/material.dart';
 
-import '../models/catalogs.dart';
+import '../../models/catalogs.dart';
 
 
 
@@ -21,7 +21,10 @@ class ItemWidget extends StatelessWidget{
 
         child: Row(
           children: [
-            CatalogImage( image:item.image.toString()),
+            Hero(
+              tag: Key(item.id.toString()),
+                child: CatalogImage( image:item.image.toString())
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 20),
