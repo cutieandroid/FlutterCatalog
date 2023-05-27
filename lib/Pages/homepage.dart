@@ -44,7 +44,7 @@ class _HomepageState extends State<Homepage> {
        backgroundColor: MyTheme.creamcolor,
        body: SafeArea(
          child: Container(
-           padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
+           padding:const EdgeInsets.symmetric(horizontal: 18,vertical: 30),
              child:Column(
                crossAxisAlignment: CrossAxisAlignment.start,
              children: [
