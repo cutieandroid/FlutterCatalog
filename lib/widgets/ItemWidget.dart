@@ -15,7 +15,7 @@ class ItemWidget extends StatelessWidget{
   Widget build(BuildContext context) {
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15) ),
 
@@ -24,7 +24,7 @@ class ItemWidget extends StatelessWidget{
             CatalogImage( image:item.image.toString()),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
