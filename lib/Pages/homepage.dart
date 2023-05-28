@@ -43,15 +43,20 @@ class _HomepageState extends State<Homepage> {
 
     return (
      Scaffold(
+
        backgroundColor: MyTheme.creamcolor,
        body: SafeArea(
+         bottom: false,
          child: Container(
            padding:const EdgeInsets.symmetric(horizontal: 18,vertical: 30),
              child:Column(
                crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                CatalogHeader(), if(CatalogModel.items!=null && CatalogModel.items.isNotEmpty)
-                 Expanded(child: CataLogList()) //we need to expand when we need to display list in column
+                 Expanded(child: Padding(
+                   padding: const EdgeInsets.only(top:16),
+                   child: CataLogList(),
+                 )) //we need to expand when we need to display list in column
 
                else
                  const Expanded(
