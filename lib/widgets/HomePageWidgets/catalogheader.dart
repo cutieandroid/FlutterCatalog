@@ -6,11 +6,11 @@ class CatalogHeader extends StatelessWidget{
     return(
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children:  [
             Text("Catalog App",
                 textScaleFactor: 3,
-                style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
-            Text("Trending products",textScaleFactor: 1.2)
+                style: TextStyle(color: Theme.of(context).accentColor,fontWeight: FontWeight.bold)),
+             Text("Trending products",textScaleFactor: 1.2,style: TextStyle(color: Theme.of(context).accentColor),)
 
           ],
         )

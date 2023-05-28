@@ -1,5 +1,6 @@
 import 'package:catalog/widgets/MyThemes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lorem/flutter_lorem.dart';
 
 import '../../models/catalogs.dart';
 
@@ -43,15 +44,19 @@ class ArcWidget extends StatelessWidget{
       clipper: CustomShape(),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        color: MyTheme.darkbluish,
+        color: Theme.of(context).canvasColor,
         padding: EdgeInsets.only(top: 50),
         child: Column(
 
           children: [
             Text(gotitem.name.toString(), textScaleFactor: 2,
-                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)
+                style: TextStyle(color: Theme.of(context).accentColor,fontWeight: FontWeight.bold)
             ),
-            Text(gotitem.desc.toString(),style: TextStyle(color:Colors.white,fontWeight: FontWeight.w100))
+            Text(gotitem.desc.toString(),style: TextStyle(color:Theme.of(context).accentColor,fontWeight: FontWeight.w100)),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+              child: Text(lorem(paragraphs: 1,words: 40),style: TextStyle(color: Theme.of(context).accentColor),textScaleFactor: 0.9,),
+            )
 
           ],
         ),

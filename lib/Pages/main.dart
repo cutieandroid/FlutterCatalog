@@ -1,3 +1,4 @@
+import 'package:catalog/Pages/Cart.dart';
 import 'package:catalog/utils/MyRoutes.dart';
 import 'package:catalog/widgets/MyThemes.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lighttheme(context),
       darkTheme: MyTheme.darktheme(context),
       //instead of doing the below stuf we created seprate themes class for better managing the themes
@@ -36,9 +37,10 @@ class MyApp extends StatelessWidget {
                  brightness: Brightness.dark
       ),*/
       routes: {
-        "/": (context) => Homepage(),
+        "/": (context) => login(),
         MyRoutes.loginroute: (context) => login(),
-        MyRoutes.homeroute: (context) => Homepage()
+        MyRoutes.homeroute: (context) => Homepage(),
+        MyRoutes.cartroute:(context)=> Cart()
       },
     );
   }

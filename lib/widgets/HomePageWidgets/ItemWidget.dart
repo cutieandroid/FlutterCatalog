@@ -56,7 +56,7 @@ class ItemWidget extends StatelessWidget{
                               backgroundColor: MaterialStateProperty.all(MyTheme.darkbluish)
                             ),
                             child:const Text(
-                              "Buy"
+                              "Add to cart"
                             )
                         )
                       ],

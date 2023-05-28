@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:catalog/models/catalogs.dart';
+import 'package:catalog/utils/MyRoutes.dart';
 import 'package:catalog/widgets/MyThemes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -44,7 +46,19 @@ class _HomepageState extends State<Homepage> {
     return (
      Scaffold(
 
-       backgroundColor: MyTheme.creamcolor,
+
+       floatingActionButton: FloatingActionButton(
+         onPressed: () {
+
+           Navigator.pushNamed(context, MyRoutes.cartroute);
+
+         },
+         backgroundColor: MyTheme.darkbluish,
+         child: const Icon(CupertinoIcons.cart,color: Colors.white),
+
+       ),
+
+       backgroundColor: Theme.of(context).canvasColor ,
        body: SafeArea(
          bottom: false,
          child: Container(

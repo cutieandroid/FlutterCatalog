@@ -17,36 +17,41 @@ class ItemDetails extends StatelessWidget{
 
     return(
     Scaffold(
+      backgroundColor: Colors.white,
       bottomNavigationBar:
-      ButtonBar(
+      Container(
+        color: Theme.of(context).canvasColor,
+        child: ButtonBar(
+          buttonPadding: EdgeInsets.fromLTRB(0, 0, 16, 0),
+          alignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("\$${gotitem.price.toString()}", textScaleFactor:1.4,style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
 
-        buttonPadding: EdgeInsets.fromLTRB(0, 0, 16, 0),
-        alignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text("\$${gotitem.price.toString()}", textScaleFactor:1.4,style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
+            ElevatedButton(onPressed:(){
 
-          ElevatedButton(onPressed:(){
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text("Added ${gotitem.name.toString()} to cart"))
 
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                    content: Text("Added ${gotitem.name.toString()} to cart"))
-
-            );
+              );
 
 
-          },
-              style: ButtonStyle(
-                  shape: MaterialStateProperty.all(StadiumBorder()),
-                  backgroundColor: MaterialStateProperty.all(MyTheme.darkbluish)
-              ),
-              child:const Text(
-                  "Buy"
-              )
-          )
-        ],
+            },
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(StadiumBorder()),
+                    backgroundColor: MaterialStateProperty.all(MyTheme.darkbluish)
+                ),
+                child:const Text(
+                    "Add to Cart"
+                )
+            )
+          ],
+        ),
       ),
 
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
 
       body: SafeArea(
         bottom: false,
