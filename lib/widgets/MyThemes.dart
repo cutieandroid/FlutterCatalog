@@ -9,7 +9,9 @@ class MyTheme {
           canvasColor: creamcolor,
           cardColor: Colors.white,
           primarySwatch: Colors.deepPurple,
-          accentColor: Colors.black,
+          colorScheme: ColorScheme.fromSwatch(
+            accentColor: Colors.black
+          ),
           fontFamily: GoogleFonts
               .poppins()
               .fontFamily,
@@ -27,7 +29,11 @@ class MyTheme {
       ThemeData(
 
           canvasColor: darkcreamcolor,
-          accentColor: Colors.white,
+          colorScheme: ColorScheme.fromSwatch(
+              accentColor: Colors.white
+          ).copyWith(
+            secondary: Colors.white
+          ),
           primarySwatch: Colors.deepPurple,
           fontFamily: GoogleFonts
               .poppins()

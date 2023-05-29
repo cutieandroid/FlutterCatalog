@@ -9,8 +9,8 @@ class CatalogHeader extends StatelessWidget{
           children:  [
             Text("Catalog App",
                 textScaleFactor: 3,
-                style: TextStyle(color: Theme.of(context).accentColor,fontWeight: FontWeight.bold)),
-             Text("Trending products",textScaleFactor: 1.2,style: TextStyle(color: Theme.of(context).accentColor),)
+                style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontWeight: FontWeight.bold)),
+             Text("Trending products",textScaleFactor: 1.2,style: TextStyle(color: Theme.of(context).colorScheme.secondary),)
 
           ],
         )

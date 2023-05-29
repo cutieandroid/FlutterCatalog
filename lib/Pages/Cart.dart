@@ -11,7 +11,7 @@ class Cart extends StatelessWidget{
     Scaffold(
       backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
-        title: Text("Cart", style: TextStyle(color: Theme.of(context).accentColor)),
+        title: Text("Cart", style: TextStyle(color: Theme.of(context).colorScheme.secondary)),
         backgroundColor: Colors.transparent,
       ),
       body: Column(
@@ -42,13 +42,13 @@ class CartListState extends State<CartList> {
   final cart= CartModel();
   @override
   Widget build(BuildContext context) {
-    return cart.items.isEmpty? Center(child: ( Text("Add Some thing To The Cart :)",textScaleFactor: 2,style: TextStyle(color: Theme.of(context).accentColor)))):
+    return cart.items.isEmpty? Center(child: ( Text("Add Some thing To The Cart :)",textScaleFactor: 2,style: TextStyle(color:Theme.of(context).colorScheme.secondary)))):
       ListView.builder(
         itemBuilder: (context,index) =>
           ListTile(
 
-            leading: Icon(Icons.done,color: Theme.of(context).accentColor),
-            trailing: InkWell(child: Icon(Icons.remove_circle_outline,color: Theme.of(context).accentColor,),
+            leading: Icon(Icons.done,color: Theme.of(context).colorScheme.secondary),
+            trailing: InkWell(child: Icon(Icons.remove_circle_outline,color: Theme.of(context).colorScheme.secondary,),
                 onTap: (){
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text("Removed ${cart.items[index].name} from cart"))
@@ -59,7 +59,7 @@ class CartListState extends State<CartList> {
                              });
                 },
             ),
-            title: Text(cart.items[index].name,style: TextStyle(color: Theme.of(context).accentColor),),
+            title: Text(cart.items[index].name,style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
             onTap: () {
 
             },
