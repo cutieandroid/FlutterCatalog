@@ -1,16 +1,9 @@
-# wscubeflutter
+this is a flutter catalog project, similar to any shopping app which has basic functionalitites like
+1. homepage to browse all products
+2. cart 
+3. basic functionalitites like adding, removing from cart
+4. A material modern ui compatible with both dark and light theme
+5. json mapping, encoding
+6. State maangement using velocity x
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is a part of my learning phase of flutter with codepur youtube channel
