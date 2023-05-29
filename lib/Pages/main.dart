@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                  brightness: Brightness.dark
       ),*/
       routes: {
-        "/": (context) => login(),
+        "/": (context) => Homepage(),
         MyRoutes.loginroute: (context) => login(),
         MyRoutes.homeroute: (context) => Homepage(),
         MyRoutes.cartroute:(context)=> Cart()

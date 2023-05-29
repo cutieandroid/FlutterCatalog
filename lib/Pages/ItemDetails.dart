@@ -1,3 +1,4 @@
+import 'package:catalog/widgets/HomePageWidgets/AddToCart.dart';
 import 'package:catalog/widgets/ItemDetailsWidget/ArcWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -27,24 +28,7 @@ class ItemDetails extends StatelessWidget{
           children: [
             Text("\$${gotitem.price.toString()}", textScaleFactor:1.4,style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
 
-            ElevatedButton(onPressed:(){
-
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text("Added ${gotitem.name.toString()} to cart"))
-
-              );
-
-
-            },
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all(StadiumBorder()),
-                    backgroundColor: MaterialStateProperty.all(MyTheme.darkbluish)
-                ),
-                child:const Text(
-                    "Add to Cart"
-                )
-            )
+           AddToCart(catalog: gotitem)
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 
+import 'package:catalog/widgets/HomePageWidgets/AddToCart.dart';
 import 'package:catalog/widgets/MyThemes.dart';
 import 'package:flutter/material.dart';
 
@@ -40,25 +41,7 @@ class ItemWidget extends StatelessWidget{
                       alignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("\$${item.price.toString()}", textScaleFactor:1.4,style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
-
-                        ElevatedButton(onPressed:(){
-
-                          ScaffoldMessenger.of(context).showSnackBar(
-                             SnackBar(
-                                 content: Text("Added ${item.name.toString()} to cart"))
-
-                          );
-
-
-                        },
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all(StadiumBorder()),
-                              backgroundColor: MaterialStateProperty.all(MyTheme.darkbluish)
-                            ),
-                            child:const Text(
-                              "Add to cart"
-                            )
-                        )
+                       AddToCart(catalog: item)
                       ],
                     )
                   ],
@@ -69,13 +52,6 @@ class ItemWidget extends StatelessWidget{
           ],
 
         )
-
-
-
-
-
-
-
 
 
 
@@ -124,3 +100,5 @@ class CatalogImage extends StatelessWidget {
      );
   }
 }
+
+
