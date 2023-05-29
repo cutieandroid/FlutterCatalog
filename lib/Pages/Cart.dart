@@ -42,7 +42,7 @@ class CartListState extends State<CartList> {
   final cart= CartModel();
   @override
   Widget build(BuildContext context) {
-    return cart.items.isEmpty? Center(child: ( Text("Add Some thing To The Cart :)",textScaleFactor: 2,style: TextStyle(color:Theme.of(context).colorScheme.secondary)))):
+    return cart.items.isEmpty? Center(child: ( Text("Add Something To The Cart :)",textScaleFactor: 2,style: TextStyle(color:Theme.of(context).colorScheme.secondary)))):
       ListView.builder(
         itemBuilder: (context,index) =>
           ListTile(
