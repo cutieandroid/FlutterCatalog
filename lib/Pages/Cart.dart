@@ -1,6 +1,9 @@
 import 'package:catalog/models/cartmodel.dart';
 import 'package:catalog/widgets/MyThemes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import '../core/MyStore.dart';
 
 class Cart extends StatelessWidget{
   @override
@@ -32,32 +35,27 @@ class Cart extends StatelessWidget{
   }
   
 }
-class CartList extends StatefulWidget{
-  @override
-  CartListState createState()=>CartListState();
+class CartList extends StatelessWidget{
 
-}
+  final CartModel cart= (VxState.store as MyStore).cart;
 
-class CartListState extends State<CartList> {
-  final cart= CartModel();
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     return cart.items.isEmpty? Center(child: ( Text("Add Something To The Cart :)",textScaleFactor: 2,style: TextStyle(color:Theme.of(context).colorScheme.secondary)))):
-      ListView.builder(
-        itemBuilder: (context,index) =>
+    ListView.builder(
+      itemBuilder: (context,index) =>
           ListTile(
 
             leading: Icon(Icons.done,color: Theme.of(context).colorScheme.secondary),
             trailing: InkWell(child: Icon(Icons.remove_circle_outline,color: Theme.of(context).colorScheme.secondary,),
-                onTap: (){
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Removed ${cart.items[index].name} from cart"))
-              );
-              cart.removeitem(cart.items[index]);
-                             setState(() {
+              onTap: (){
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Removed ${cart.items[index].name} from cart"))
+                );
+                RemoveMutation(cart.items[index]);
 
-                             });
-                },
+              },
             ),
             title: Text(cart.items[index].name,style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
             onTap: () {
@@ -65,15 +63,18 @@ class CartListState extends State<CartList> {
             },
           ),
 
-        itemCount: cart.items.length,
+      itemCount: cart.items.length,
     );
   }
+
 }
 
+
 class Cartfooter extends StatelessWidget{
+  final CartModel cart= (VxState.store as MyStore).cart;
   @override
   Widget build(BuildContext context) {
-    final cart= CartModel();
+
     return
       Padding(
       padding: const EdgeInsets.symmetric(horizontal:25,vertical: 30),
@@ -91,7 +92,14 @@ class Cartfooter extends StatelessWidget{
 
 
               children: [
-                  Text("Total : \$${cart.totalprice}",textScaleFactor: 1.5,),
+                  VxConsumer(
+                    notifications: {},
+                    mutations: {RemoveMutation},
+                    builder: (context,store,status) {
+                      return( Text("Total : \$${cart.totalprice}",textScaleFactor: 1.5));
+                    },
+
+                  ),
                   ElevatedButton(onPressed:(){
 
                 },
@@ -106,8 +114,6 @@ class Cartfooter extends StatelessWidget{
                 )
 
               ],
-
-
 
             ),
           ),

@@ -3,7 +3,7 @@ import 'package:catalog/widgets/ItemDetailsWidget/ArcWidget.dart';
 import 'package:flutter/material.dart';
 
 import '../models/catalogs.dart';
-import '../widgets/MyThemes.dart';
+
 
 class ItemDetails extends StatelessWidget{
 

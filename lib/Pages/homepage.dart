@@ -10,8 +10,6 @@ import 'package:flutter/services.dart';
 
 import '../widgets/HomePageWidgets/catalogheader.dart';
 import '../widgets/HomePageWidgets/cataloglist.dart';
-import '../widgets/HomePageWidgets/ItemWidget.dart';
-import '../widgets/HomePageWidgets/MyDrawer.dart';
 
 class Homepage extends StatefulWidget {
   @override

@@ -1,4 +1,4 @@
-import 'package:catalog/widgets/MyThemes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
