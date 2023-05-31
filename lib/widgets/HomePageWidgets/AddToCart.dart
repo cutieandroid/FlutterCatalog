@@ -40,7 +40,8 @@ class AddToCart extends StatelessWidget {
           child: isincart
               ? const Icon(Icons.done, color: Colors.white)
               : const Text(
-              "Add to cart"
+              "Add to cart",textScaleFactor: 1,
+              style: TextStyle(fontSize: 12),
           )
       );
   }

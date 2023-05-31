@@ -1,4 +1,4 @@
-package com.example.wscubeflutter
+package com.example.catalog
 
 import io.flutter.embedding.android.FlutterActivity
 

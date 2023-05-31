@@ -8,9 +8,9 @@ class CatalogHeader extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  [
             Text("Catalog App",
-                textScaleFactor: 3,
-                style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontWeight: FontWeight.bold)),
-             Text("Trending products",textScaleFactor: 1.2,style: TextStyle(color: Theme.of(context).colorScheme.secondary),)
+                textScaleFactor: 1,
+                style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontWeight: FontWeight.bold,fontSize: 40)),
+             Text("Trending products",textScaleFactor: 1,style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontSize: 18),)
 
           ],
         )

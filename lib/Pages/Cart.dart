@@ -96,7 +96,7 @@ class Cartfooter extends StatelessWidget{
                     notifications: {},
                     mutations: {RemoveMutation},
                     builder: (context,store,status) {
-                      return( Text("Total : \$${cart.totalprice}",textScaleFactor: 1.5));
+                      return( Text("Total : \$${cart.totalprice}",textScaleFactor: 1,style: TextStyle(fontSize: 20),));
                     },
 
                   ),

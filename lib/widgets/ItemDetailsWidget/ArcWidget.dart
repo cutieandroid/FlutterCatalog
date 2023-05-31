@@ -49,13 +49,13 @@ class ArcWidget extends StatelessWidget{
         child: Column(
 
           children: [
-            Text(gotitem.name.toString(), textScaleFactor: 2,
-                style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontWeight: FontWeight.bold)
+            Text(gotitem.name.toString(), textScaleFactor: 1,
+                style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontWeight: FontWeight.bold,fontSize: 18)
             ),
             Text(gotitem.desc.toString(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontWeight: FontWeight.w100)),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-              child: Text(lorem(paragraphs: 1,words: 40),style: TextStyle(color: Theme.of(context).colorScheme.secondary),textScaleFactor: 0.9,),
+              child: Text(lorem(paragraphs: 1,words: 40),style: TextStyle(color: Theme.of(context).colorScheme.secondary,fontSize: 16),textScaleFactor: 1,),
             )
 
           ],

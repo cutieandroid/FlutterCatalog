@@ -71,7 +71,7 @@ class _HomepageState extends State<Homepage>{
              backgroundColor: MyTheme.darkbluish,
              child: const Icon(CupertinoIcons.cart,color: Colors.white),
 
-           ).badge(color: Colors.red,count: cart.items.length,size: 25,textStyle: TextStyle(fontSize: 20)),
+           ).badge(color: Colors.red,count: cart.items.length,size: 25,textStyle: TextStyle(fontSize: 16)),
 
          mutations: {AddMutation,RemoveMutation},
        ),

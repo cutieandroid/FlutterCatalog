@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wscubeflutter">
+    package="com.example.catalog">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
    <application
-        android:label="wscubeflutter"
+        android:label="catalog"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -32,15 +32,15 @@ class ItemWidget extends StatelessWidget{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(item.name.toString(), textScaleFactor: 1.2,
-                        style: TextStyle(color: MyTheme.darkbluish,fontWeight: FontWeight.bold)
+                    Text(item.name.toString(), textScaleFactor: 1,
+                        style: TextStyle(color: MyTheme.darkbluish,fontWeight: FontWeight.bold,fontSize: 20)
                     ),
-                    Text(item.desc.toString(),style: TextStyle(fontWeight: FontWeight.w100),),
+                    Text(item.desc.toString(),textScaleFactor:1,style: TextStyle(fontWeight: FontWeight.w100,fontSize: 16),),
                     ButtonBar(
                       buttonPadding: EdgeInsets.fromLTRB(0, 0, 16, 0),
                       alignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("\$${item.price.toString()}", textScaleFactor:1.4,style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
+                        Text("\$${item.price.toString()}", textScaleFactor:1,style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 20),),
                        AddToCart(catalog: item)
                       ],
                     )
